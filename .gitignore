@@ -1,0 +1,6 @@
+.DS_Store
+/also-crm-prototype.zip
+.env
+.env.*
+!.env.example
+node_modules/
