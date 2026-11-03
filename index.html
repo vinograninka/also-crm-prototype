@@ -71,6 +71,11 @@
     html[data-design] body:before{inset:0;background:radial-gradient(ellipse at 72% -10%,var(--design-wash-b),transparent 58%),radial-gradient(ellipse at 20% 88%,var(--design-wash-a),transparent 65%);opacity:.83}
     html[data-design] body:after{width:36vw;height:160vh;top:-35vh;right:4vw;transform:rotate(29deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.22) 1px,transparent 2px),linear-gradient(90deg,transparent 0 5%,var(--design-wash-c) 6% 46%,transparent 47% 64%,rgba(255,255,255,.32) 65% 66%,transparent 67%);opacity:.12}
     html[data-design="orchid"] body:after{right:9vw;transform:rotate(-31deg);opacity:.14}
+    .brand-watermark{display:none}
+    html[data-design="sage"] body:after{display:none}
+    html[data-design="sage"] .brand-watermark{display:block;position:fixed;z-index:-1;right:2vw;top:9vh;width:auto;font:400 clamp(180px,21vw,410px)/.9 var(--serif);letter-spacing:-.055em;text-align:center;color:rgba(89,9,7,.105);text-shadow:0 1px 0 rgba(255,255,255,.25);transform:none;white-space:nowrap;pointer-events:none;user-select:none}
+    @media(max-width:900px) and (min-width:761px){html[data-design="sage"] .brand-watermark{width:calc(100vw - 90px);font-size:35vw}}
+    @media(max-width:760px){html[data-design="sage"] .brand-watermark{width:100vw;right:0;top:31vh;font-size:39vw;transform:none;color:rgba(89,9,7,.075)}}
     html[data-design="nocturne"] body:before{background:radial-gradient(ellipse at 85% 0,rgba(231,176,222,.2),transparent 43%),radial-gradient(ellipse at 25% 85%,rgba(96,20,103,.64),transparent 65%),radial-gradient(ellipse at 95% 85%,rgba(255,90,10,.12),transparent 36%)}
     html[data-design="nocturne"] body:after{opacity:.11;right:10vw;transform:rotate(-23deg)}
     html[data-design] .glass{background:linear-gradient(125deg,rgba(255,255,255,.13),transparent 65%),var(--design-glass);border-color:var(--design-border);box-shadow:0 16px 38px -25px var(--design-shadow),inset 0 1px 0 rgba(255,255,255,.48),inset 0 -1px 0 rgba(255,255,255,.09);backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%)}
@@ -177,11 +182,12 @@
     html[data-design] .design-option:hover{background:var(--design-chip)}
     @media(max-width:1200px){.design-trigger>span{max-width:95px}.top-actions{gap:10px}}
     @media(max-width:760px){.design-trigger{width:38px;height:38px;padding:0;justify-content:center}.design-trigger>span{display:none}.demo-full{display:none}.demo-short{display:inline}.top-actions{gap:7px}.design-options{gap:9px}.design-option{padding:14px;min-height:156px}.design-option.selected{padding:13px}.design-option strong{font-size:18px}.design-option p{font-size:9px}.design-palette i{width:20px;height:20px}.design-index{top:18px;right:12px}.design-share{display:grid}.design-share .text-btn{margin:0;justify-content:center}.design-palette{gap:4px}}
-    @media print{html[data-design] body{color:#382832;background:white}html[data-design] body:before,html[data-design] body:after,.design-trigger{display:none!important}}
+    @media print{html[data-design] body{color:#382832;background:white}html[data-design] body:before,html[data-design] body:after,.design-trigger,.brand-watermark{display:none!important}}
 
   </style>
 </head>
 <body>
+  <div class="brand-watermark" aria-hidden="true">ALSO</div>
   <noscript><div class="noscript"><h1>ALSO CRM</h1><p>Интерактивный прототип для согласования: новые и повторные продажи, общие входящие, клиенты, документы и аналитика.</p><p>Для просмотра экранов включите JavaScript. Все данные вымышлены; подключения к сервисам отсутствуют.</p></div></noscript>
   <div class="app-shell">
     <aside class="sidebar" aria-label="Основная навигация">
